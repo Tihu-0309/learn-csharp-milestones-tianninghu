@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class LearningCurve : MonoBehaviour
 {
@@ -60,10 +61,11 @@ public class LearningCurve : MonoBehaviour
 
             }
         }
-        if(!WeaponEquipped)
+        if (!WeaponEquipped)
         {
             Debug.Log("Not today.");
         }
+        Character hero = new Character();
     }
 
     /// <summary>
