@@ -1,0 +1,70 @@
+using UnityEngine;
+
+public class Chapter3n4 : MonoBehaviour
+{
+    public bool WeaponEquipped = true;
+    public string WeaponType = "Claymore";
+
+    public int CurrentErgo = 32;
+    public bool BlueButterfly = true;
+
+    void start()
+    {
+        int characterLevel = 23;
+        GenerateCharacter("Pino", characterLevel);
+        int nextSkillLevel = GenerateCharacter("Pino", characterLevel);
+        Debug.Log(nextSkillLevel);
+        Debug.Log(GenerateCharacter("Penelope", characterLevel));
+        if (BlueButterfly)
+        {
+            Debug.Log("Wake up, clever one");
+        }
+        else
+        {
+            Debug.Log("The time has not come.");
+        }
+
+
+        Thievery();
+
+        if (WeaponEquipped)
+        {
+            if (WeaponType == "Claymore")
+            {
+                Debug.Log("Force conquers.");
+            }
+            if (WeaponType != "Claymore")
+            {
+                Debug.Log("Come back another day.");
+
+            }
+        }
+        if (!WeaponEquipped)
+        {
+            Debug.Log("Not today.");
+        }
+
+        int GenerateCharacter(string name, int level)
+        {
+            Debug.LogFormat("Character: {0} - Level: {1}", name, level);
+
+            return level += 5;
+        }
+
+        void Thievery()
+        {
+            if (CurrentErgo > 50)
+            {
+                Debug.Log("You're rolling in it!");
+            }
+            else if (CurrentErgo < 50)
+            {
+                Debug.Log("Not much there to steal...");
+            }
+            else
+            {
+                Debug.Log("Looks like your purse is in the sweet spot.");
+            }
+        }
+    }
+}
