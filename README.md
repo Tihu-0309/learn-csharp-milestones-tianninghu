@@ -75,7 +75,7 @@ Diving into Variables, Types, and Methods (38–64)
 		- [ ] Define a simple method with parameters
 		- [ ] Add a return type and return some data from a method
 		- [ ] Use data returned from a method
-- [ ] ✏️ Explain some differences between public and private variables: **??**
+- [ ] ✏️ Explain some differences between public and private variables: **Public variables can be accessed from anywhere, while private variables are only available in the class they're created in. Public variables are shown and changable in unity, while private variables are only shown and changeable in the code. (Such as VScode)**
 
 
 ## Chapter 4
