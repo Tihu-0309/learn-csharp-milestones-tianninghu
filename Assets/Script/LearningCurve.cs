@@ -65,7 +65,30 @@ public class LearningCurve : MonoBehaviour
         {
             Debug.Log("Not today.");
         }
+
         Character hero = new Character();
+        Debug.LogFormat("Hero: {0} - {1} EXP", hero.Name, hero.Exp);
+        hero.PrintStatsInfo();
+
+        Character heroine = new Character("Penelope");
+        Debug.LogFormat("Hero: {0} - {1} EXP", heroine.Name, heroine.Exp);
+        heroine.PrintStatsInfo();
+
+        Weapon huntingBow = new Weapon("Hunting Bow", 50);
+        huntingBow.PrintWeaponStats();
+
+        Weapon warBow = new Weapon("War Bow", 100);
+        warBow.PrintWeaponStats();
+
+        Paladin knight = new Paladin("Sir Sterling", huntingBow);
+        knight.PrintStatsInfo();
+
+        CamTransform = this.GetComponent<Transform>();
+        Debug.Log(CamTransform.localPosition);
+        DirectionLight = GameObject.Find("Directional Light");
+        LightTransform = DirectionLight.GetComponent<Transform>();
+        Debug.Log(LightTransform.localPosition);
+
     }
 
     /// <summary>
@@ -99,4 +122,9 @@ public class LearningCurve : MonoBehaviour
             Debug.Log("Looks like your purse is in the sweet spot.");
         }
     }
+
+    public Transform CamTransform;
+    public GameObject DirectionLight;
+    public Transform LightTransform;
+
 }
